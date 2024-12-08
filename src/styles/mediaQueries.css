@@ -1,34 +1,38 @@
 @media (min-width: 801px) {
     body {
-      margin: 5%;
+      margin-top: 10vw;
     }
   
     #header {
+      position: fixed;
+      top: 0;
+      height: 5vw;
+      background-color: #FFF8F8;
+      width: 80%;
       font-size: 1.5rem;
-      margin: 0 auto; 
       display: flex;
-      justify-content: space-around;
-      padding: 10px;
+      align-items: center;
+      padding: 0% 10%;
     }
+    
   
     #remplissage {
       width: 100%;
       height: 100vh;
     }
   
-    #title {
+    .title {
       font-size: 8rem;
       margin: 8% 10%;
     }
   
-    #message {
+    .message {
       font-size: 3rem;
       margin: 0% 25%; 
     }
-  
-    #project {
-      width: 80%;
-      margin: 5% auto;
+
+    li {
+      padding: 3% 0%;
     }
   }
   

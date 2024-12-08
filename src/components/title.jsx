@@ -1,7 +1,7 @@
-export const Title = ({ message }) => {
+export const Title = ({ message, id }) => {
     return (
         <>
-            <h1 id="title">
+            <h1 className="title" id={id}>
                 {message}
             </h1>
         </>

@@ -21,6 +21,11 @@
     background-color: #ffffff;
   }
 
+  .divHeader p:hover {
+    color: #800000;
+    text-decoration: underline;
+  }
+
   .burger span {
     width: 7%;
     height: 2px;

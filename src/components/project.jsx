@@ -1,8 +1,12 @@
 import { useState } from 'react'
+import { Title } from './title';
 
 export const Project = ({projects}) => {
 
-    return <div id="project">
+    return <> 
+    <div id='linkProject'></div>
+    <Title message="Parlons peu, parlons projets..." id="project"/>
+    <div id="divProject">
     {projects.map((project, index) => {
         const [display, setDisplay] = useState("none");
         return (
@@ -17,4 +21,5 @@ export const Project = ({projects}) => {
         </div>)
     })}
     </div>
+    </>
 }

@@ -9,6 +9,7 @@ import {Project} from './components/project.jsx'
 import { Accueil } from './components/accueil.jsx'
 import { Profile } from './components/profile.jsx'
 import { useEffect } from 'react'
+import { Contact } from './components/contact.jsx';
 
 function App() {
 
@@ -60,6 +61,7 @@ useEffect(()=> {
           <Accueil />
           <Profile />
           <Project projects={arrayProjects} />
+          <Contact />
         </>
       )}
     </>

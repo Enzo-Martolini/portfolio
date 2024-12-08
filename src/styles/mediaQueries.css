@@ -1,0 +1,34 @@
+@media (min-width: 801px) {
+    body {
+      margin: 5%;
+    }
+  
+    #header {
+      font-size: 1.5rem;
+      margin: 0 auto; 
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+    }
+  
+    #remplissage {
+      width: 100%;
+      height: 100vh;
+    }
+  
+    #title {
+      font-size: 8rem;
+      margin: 8% 10%;
+    }
+  
+    #message {
+      font-size: 3rem;
+      margin: 0% 25%; 
+    }
+  
+    #project {
+      width: 80%;
+      margin: 5% auto;
+    }
+  }
+  

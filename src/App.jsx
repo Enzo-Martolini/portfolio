@@ -1,8 +1,14 @@
+import './styles/body.css';
+import './styles/header.css';
+import './styles/mediaQueries.css';
+import './styles/project.css';
+
+import { useState } from 'react'
 import {Header} from './components/header.jsx'
 import {Project} from './components/project.jsx'
-import './App.css'
 import { Accueil } from './components/accueil.jsx'
 import { Profile } from './components/profile.jsx'
+import { useEffect } from 'react'
 
 function App() {
 
@@ -33,15 +39,32 @@ function App() {
       link: "https://www.app-meteo.com",
     }
   ]
-  
+
+const [isLoading, setIsLoading] = useState(true)
+
+useEffect(()=> {
+  const timer = setTimeout(() => {
+    setIsLoading(false)
+  }, 5000)
+
+  return () => clearTimeout(timer)
+}, [])
+
   return (
     <>
-    <Header />
-    <Accueil />
-    <Profile />
-    <Project projects={arrayProjects} />
+      {isLoading ? (
+        <p>Chargement... </p>
+      ) : (
+        <>
+          <Header />
+          <Accueil />
+          <Profile />
+          <Project projects={arrayProjects} />
+        </>
+      )}
     </>
-  )
+  );
 }
+
 
 export default App

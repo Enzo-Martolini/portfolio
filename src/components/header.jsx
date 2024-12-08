@@ -41,12 +41,12 @@ export const Header = () => {
                 id="header" 
                 style={hasShadowY ? { boxShadow: `0px ${hasShadowY}px 30px -10px #000000` } : {}}>
                 <div className="divHeader">
-                <a href='#top'>Accueil</a>
+                <a href='#top' onClick={() => setHasShadow(10)}>Accueil</a>
                 </div>
                 <div className="divHeader">
-                <a href='#linkProfile'>Profil</a>
-                <a href='#linkProject'>Projets</a>
-                <a href='#linkContact'>Contact</a>
+                <a href='#linkProfile' onClick={() => setHasShadow(10)}>Profil</a>
+                <a href='#linkProject' onClick={() => setHasShadow(10)}>Projets</a>
+                <a href='#linkContact' onClick={() => setHasShadow(10)}>Contact</a>
                 </div>
             </div>
 }

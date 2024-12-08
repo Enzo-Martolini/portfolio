@@ -1,7 +1,11 @@
 body {
-  width: 100%;
+  margin: 10% 5%;
+  width: 90%;
   height: 100%;
+  background-color: #242424;
 }
+
+
 #root {
   color: rgb(202, 202, 202);
   width: 100%;
@@ -9,17 +13,70 @@ body {
 }
 
 #header {
+  display: none;
+}
+
+.burger span {
+  width: 7%;
+  height: 2px;
+  margin: 2% 0%;
+  display: block; 
+  background-color: #ffffff;
+}
+
+.divHeader span {
+  width: 100%;
+  height: 1px;
+  margin: 2% 0%;
+  display: block; 
+  background-color: #ffffff;
+}
+
+#title {
+  color: #800000;
+  font-family: "Kalnia", serif;
+  font-size: 3rem;
+  width: 50%;
+  margin: 8% 10%;
+}
+
+#message {
   font-size: 1.5rem;
+  margin: 0% 15%; 
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+#project {
   width: 80%;
-  margin: 0 auto; /* Centre horizontalement */
+  font-size: 1.5rem;
+  margin: 0% 15%; 
+
+}
+
+.project-message {
+  font-size: 1.2rem;
+}
+
+@media (min-width:801px) {
+
+body {
+  margin: 5%;
+}
+
+#header {
+  font-size: 1.5rem;
+  margin: 0 auto; 
   display: flex;
   justify-content: space-around;
   padding: 10px;
 }
 
 .divHeader {
-  width: 50%;
+  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
 
@@ -42,7 +99,7 @@ body {
 
 #message {
   font-size: 3rem;
-  margin: 0% 25% 0% 25%; /* Centre horizontalement */
+  margin: 0% 25% 0% 25%; 
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -50,7 +107,7 @@ body {
 
 #project {
   width: 80%;
-  margin: 0 auto;
+  margin: 5% auto;
 }
 
 .span-line {
@@ -58,4 +115,6 @@ body {
   display: block; 
   width: 100%; 
   background-color: #ffffff;
+}
+
 }

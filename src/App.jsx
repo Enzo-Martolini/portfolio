@@ -1,11 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Header from './components/header.jsx'
-import {Title} from './components/title.jsx'
-import {Message} from './components/message.jsx'
+import {Header} from './components/header.jsx'
 import {Project} from './components/project.jsx'
 import './App.css'
+import { Accueil } from './components/accueil.jsx'
+import { Profile } from './components/profile.jsx'
 
 function App() {
 
@@ -40,11 +37,8 @@ function App() {
   return (
     <>
     <Header />
-    <Title message="Enzo Martolini" />
-    <Message message="Etudiant en developpement web, spécialisé dans le frontend, avec des bases solides en backend."/>
-    <Title message="Qui suis-je ?" />
-    <Message message="Jeune étudiant de vingt sept ans, j’ai passé huit années à travailler en restauration comme cuisinier. Avant de me reconvertir dans l’IT il y a trois ans, puis me spécialisé dans le developpement web et particulièrement le frontend."/>
-    <Title message="Parlons projets" />
+    <Accueil />
+    <Profile />
     <Project projects={arrayProjects} />
     </>
   )

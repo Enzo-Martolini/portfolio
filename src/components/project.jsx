@@ -13,7 +13,7 @@ export const Project = ({projects}) => {
         <div key={index} onClick={() => setDisplay(display === "none" ? "block" : "none")}>
             <div style={{display:"flex", justifyContent:"space-between"}}>
                 <p>{project.name}</p>
-                <p>{display === "none" ? <i class="arrow right"></i> : <i class="arrow down"></i> }</p>
+                <p>{display === "none" ? <i className="arrow right"></i> : <i className="arrow down"></i> }</p>
             </div>
             <p style={{display: display}} className='project-message'>{project.description}</p>
             <p style={{display: display}} className='project-message'>Languages utilisés : {project.language}</p>

@@ -9,7 +9,6 @@
     font-style: normal;
     font-size: 1.2rem;
     padding: 2%;
-
   }
   
   .span-line {
@@ -35,4 +34,19 @@
   .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+  }
+
+  @media (min-width:801px) { 
+
+    .project-message {
+      font-size: 1.5rem;
+
+    }
+
+    li.message p:hover {
+      color: #800000;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    
   }

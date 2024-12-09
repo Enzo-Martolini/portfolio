@@ -1,4 +1,4 @@
-@media (min-width: 801px) {
+@media (min-width: 811px) {
     body {
       margin-top: 10vw;
     }
@@ -22,7 +22,7 @@
     }
   
     .title {
-      font-size: 8rem;
+      font-size: 6rem;
       margin: 8% 10%;
     }
   
@@ -31,8 +31,5 @@
       margin: 0% 25%; 
     }
 
-    li {
-      padding: 3% 0%;
-    }
   }
   

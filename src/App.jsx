@@ -1,4 +1,5 @@
 import './styles/body.css';
+import './styles/contact.css';
 import './styles/header.css';
 import './styles/mediaQueries.css';
 import './styles/project.css';
@@ -16,28 +17,27 @@ function App() {
   let arrayProjects = [
     {
       name: "Portfolio Personnel",
-      description: "Un site web personnel qui présente mes compétences en développement web, avec une galerie de projets et un blog.",
-      link: "https://www.monportfolio.com",
+      description: "Un site web personnel qui présente mes compétences en développement web, avec une galerie de projets et mes contacts.",
+      link: "https://github.com/Enzo-Martolini/portfolio",
+      language: "React"
     },
     {
-      name: "Application de Gestion de Budget",
-      description: "Une application web permettant de suivre les revenus et les dépenses mensuelles, avec des graphiques et des alertes de budget.",
-      link: "https://www.gestion-budget-app.com",
+      name: "Budgety",
+      description: "Une application web permettant de suivre les revenus et les dépenses mensuelles, tout en suivant un budget.",
+      link: "https://github.com/Enzo-Martolini/Budgety",
+      language: "Javascript et React"
     },
     {
-      name: "E-commerce React",
-      description: "Un site e-commerce construit avec React.js, permettant aux utilisateurs de parcourir des produits, de les ajouter au panier et de passer des commandes.",
-      link: "https://www.mon-site-ecommerce.com",
+      name: "Site des calanques de Marseille",
+      description: "Un site de reservation de bungalows pour une periode dans les calanques, tout en trouvant des informations sur la destination et des setniers à parcourir.",
+      link: "https://github.com/le-plat-jonathan/parc_national",
+      language: "Javascript, PHP et SQL"
     },
     {
-      name: "Blog sur la Technologie",
-      description: "Un blog où je publie des articles sur les dernières tendances technologiques, les langages de programmation, et les outils de développement.",
-      link: "https://www.techblog.com",
-    },
-    {
-      name: "Application de Météo",
-      description: "Une application mobile qui fournit les prévisions météorologiques en temps réel et les alertes météo pour différentes régions.",
-      link: "https://www.app-meteo.com",
+      name: "E-commerce de padel",
+      description: "Un site e-commerce construit avec Javascript, permettant aux utilisateurs de parcourir des produits, de les ajouter au panier et de passer des commandes.",
+      link: "https://github.com/Enzo-Martolini/padel_site_e-commerce",
+      language: "Javascript, PHP et SQL"
     }
   ]
 

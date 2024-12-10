@@ -1,5 +1,6 @@
 #header {
     display: none;
+    transition: opacity 1.5s ease-in;
   }
   
   .divHeader {
@@ -32,5 +33,9 @@
     margin: 2% 0%;
     display: block; 
     background-color: #ffffff;
+  }
+  
+  .active {
+    color: #800000; /* Exemple de couleur active */
   }
   

@@ -41,29 +41,53 @@ function App() {
     }
   ]
 
-const [isLoading, setIsLoading] = useState(true)
+const [isLoadingIntro, setIsLoadingIntro] = useState(true)
+const [isLoadingMain, setIsLoadingMain] = useState(false)
+
+const [currentHash, setCurrentHash] = useState(location.hash);
+console.log(currentHash === "")
 
 useEffect(()=> {
-  const timer = setTimeout(() => {
-    setIsLoading(false)
-  }, 5000)
+  let handleChangeHash = () => {
+    setCurrentHash(location.hash)
+    console.log(location.hash)
+  }
+  window.addEventListener('hashchange', handleChangeHash)
 
-  return () => clearTimeout(timer)
+  return () => {
+    window.removeEventListener("hashchange", handleChangeHash);
+  };
+
+},[])
+
+useEffect(()=> {
+  const timerIntro = setTimeout(() => {
+    setIsLoadingIntro(false)
+  }, 1500)
+
+  const timerMain = setTimeout(() => {
+    setIsLoadingMain(true)
+  }, 2000)
+
+  return () => {clearTimeout(timerIntro); clearTimeout(timerMain) }
 }, [])
 
   return (
     <>
-      {isLoading ? (
-        <p>Chargement... </p>
-      ) : (
-        <>
+
+        <div style={isLoadingIntro ? {opacity : 1} : {opacity : 0}} className='intro'>
+          <p className='title'>Bienvenue sur mon <b>Portfolio</b></p>
+        </div>
+        <div style={isLoadingMain ? {opacity : 1} : {opacity : 0}} className='main'>
           <Header />
-          <Accueil />
-          <Profile />
-          <Project projects={arrayProjects} />
-          <Contact />
-        </>
-      )}
+          {currentHash === "#top" || currentHash === "" ? <Accueil opacity={isLoadingMain ? 1 : 0} /> : "" }
+          {currentHash === "#linkProfile" ? <Profile /> : "" }
+          {currentHash === "#linkProject" ? <Project projects={arrayProjects} /> : "" }
+          {currentHash === "#linkContact" ? <Contact /> : "" }
+          
+          
+        </div>
+
     </>
   );
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export const Header = ({ opacity }) => {
   const isMobile = window.innerWidth < 801;
   const [currentHash, setCurrentHash] = useState(location.hash);
+  const [hasShadowY, setHasShadow] = useState(0);
 
   useEffect(()=> {
     let handleChangeHash = () => {
@@ -15,6 +16,17 @@ export const Header = ({ opacity }) => {
     };
   
   },[])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollValue = window.scrollY * 100 / 1000; 
+      scrollValue < 10 ? setHasShadow(scrollValue) : null;
+  };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return isMobile ? (
     <div id="header">
@@ -45,11 +57,12 @@ export const Header = ({ opacity }) => {
       </div>
     </div>
   ) : (
-    <div id="header">
+    <div id="header" style={hasShadowY ? { boxShadow: `0px ${hasShadowY}px 30px -10px #000000` } : {}}>
       <div className="divHeader">
         <a
           href="#top"
           className={currentHash === "#top" || currentHash === "" ? "active" : ""}
+          onClick={() => setHasShadow(10)}
         >
           Accueil
         </a>
@@ -58,18 +71,21 @@ export const Header = ({ opacity }) => {
         <a
           href="#linkProfile"
           className={currentHash === "#linkProfile" ? "active" : ""}
+          onClick={() => setHasShadow(10)}
         >
           Profil
         </a>
         <a
           href="#linkProject"
           className={currentHash === "#linkProject" ? "active" : ""}
+          onClick={() => setHasShadow(10)}
         >
           Projets
         </a>
         <a
           href="#linkContact"
           className={currentHash === "#linkContact" ? "active" : ""}
+          onClick={() => setHasShadow(10)}
         >
           Contact
         </a>

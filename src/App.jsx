@@ -1,5 +1,6 @@
 import './styles/body.css';
 import './styles/contact.css';
+import './styles/profile.css';
 import './styles/header.css';
 import './styles/mediaQueries.css';
 import './styles/project.css';
@@ -45,7 +46,6 @@ const [isLoadingIntro, setIsLoadingIntro] = useState(true)
 const [isLoadingMain, setIsLoadingMain] = useState(false)
 
 const [currentHash, setCurrentHash] = useState(location.hash);
-console.log(currentHash === "")
 
 useEffect(()=> {
   let handleChangeHash = () => {
@@ -69,16 +69,22 @@ useEffect(()=> {
     setIsLoadingMain(true)
   }, 2000)
 
-  return () => {clearTimeout(timerIntro); clearTimeout(timerMain) }
+  const timerDisplay = setTimeout(() => {
+    console.log("check 2s")
+    console.log(document.querySelector('.intro'))
+    document.querySelector('.intro').style.display = "none"
+  }, 2000)
+
+  return () => {clearTimeout(timerIntro); clearTimeout(timerMain); clearTimeout(timerDisplay)  }
 }, [])
 
   return (
     <>
 
-        <div style={isLoadingIntro ? {opacity : 1} : {opacity : 0}} className='intro'>
-          <p className='title'>Bienvenue sur mon <b>Portfolio</b></p>
-        </div>
-        <div style={isLoadingMain ? {opacity : 1} : {opacity : 0}} className='main'>
+          <div style={isLoadingIntro ? {opacity : 1} : {opacity : 0}} className='intro'>
+            <p className='title'>Bienvenue sur mon <b>Portfolio</b></p>
+          </div>
+          <div style={isLoadingMain ? {opacity : 1} : {opacity : 0, display : "none"}} className='main'>
           <Header />
           {currentHash === "#top" || currentHash === "" ? <Accueil opacity={isLoadingMain ? 1 : 0} /> : "" }
           {currentHash === "#linkProfile" ? <Profile /> : "" }

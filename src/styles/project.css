@@ -42,6 +42,11 @@
       font-size: 1.5rem;
 
     }
+    li.message  {
+      display: flex;
+      align-items: center;
+      vertical-align: middle;
+    }
 
     li.message p:hover {
       color: #800000;

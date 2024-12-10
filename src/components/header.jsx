@@ -2,17 +2,22 @@ import { useState, useEffect } from "react";
 
 export const Header = ({ opacity }) => {
   const isMobile = window.innerWidth < 801;
+  const [currentHash, setCurrentHash] = useState(location.hash);
 
-  useEffect(() => {
-   
-  }, []);
-
-  const getActiveClass = (id) => (activeSection === id ? "active" : "");
+  useEffect(()=> {
+    let handleChangeHash = () => {
+        setCurrentHash(location.hash)
+    }
+    window.addEventListener('hashchange', handleChangeHash)
+  
+    return () => {
+      window.removeEventListener("hashchange", handleChangeHash);
+    };
+  
+  },[])
 
   return isMobile ? (
-    <div
-      id="header"
-    >
+    <div id="header">
       <div
         className="burger"
         onClick={() => setDisplay(isDisplay === "none" ? "block" : "none")}
@@ -26,27 +31,25 @@ export const Header = ({ opacity }) => {
         <span></span>
       </div>
       <div className="divHeader" style={{ display: isDisplay }}>
-        <a href="#profile">
+        <a href="#profile" className={currentHash === "#profile" ? "active" : ""}>
           Profil
         </a>
         <span></span>
-        <a href="#project">
+        <a href="#project" className={currentHash === "#project" ? "active" : ""}>
           Projets
         </a>
         <span></span>
-        <a href="#contact">
+        <a href="#contact" className={currentHash === "#contact" ? "active" : ""}>
           Contact
         </a>
       </div>
     </div>
   ) : (
-    <div
-      id="header"
-    >
+    <div id="header">
       <div className="divHeader">
         <a
           href="#top"
-          onClick={() => setHasShadow(10)}
+          className={currentHash === "#top" || currentHash === "" ? "active" : ""}
         >
           Accueil
         </a>
@@ -54,26 +57,24 @@ export const Header = ({ opacity }) => {
       <div className="divHeader">
         <a
           href="#linkProfile"
-        
-          onClick={() => setHasShadow(10)}
+          className={currentHash === "#linkProfile" ? "active" : ""}
         >
           Profil
         </a>
         <a
           href="#linkProject"
-        
-          onClick={() => setHasShadow(10)}
+          className={currentHash === "#linkProject" ? "active" : ""}
         >
           Projets
         </a>
         <a
           href="#linkContact"
-        
-          onClick={() => setHasShadow(10)}
+          className={currentHash === "#linkContact" ? "active" : ""}
         >
           Contact
         </a>
       </div>
     </div>
   );
+  
 };

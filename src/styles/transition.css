@@ -1,0 +1,25 @@
+/* Intro */
+.intro {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 3s ease-out; /* Augmentation de la durée pour une transition plus douce */
+  }
+  
+  .intro.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 3s ease-out, visibility 0s 3s; /* Délais ajustés pour que l'élément soit caché après l'opacity */
+  }
+  
+  /* Main */
+  .main {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 3s ease-out; /* Transition plus douce pour le main */
+  }
+  
+  .main.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  

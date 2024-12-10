@@ -36,6 +36,7 @@
   }
   
   .active {
-    color: #800000; /* Exemple de couleur active */
+    color: #800000;
+    text-decoration: underline;
   }
   
